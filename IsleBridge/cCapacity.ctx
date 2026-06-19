@@ -1,0 +1,6 @@
+context cCapacity
+constants
+	capacity
+axioms
+	@cap capacity ∈ ℕ1
+end

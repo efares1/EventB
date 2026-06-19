@@ -1,0 +1,17 @@
+observation refinement m3_TrafficLights refines m2_BridgeToIsle sees cColor cCapacity 
+
+    event ML2BR // an event of the refined machine m2_BridgeToIsle
+    observes @exclusivity @capacity // guards of ML2BR to be replaced by ml_tl=green
+        using new variable ml_tl:COLOR // tested variable instead of guards
+            enabled by green // green asserts that grd1,grd2 are true
+            disabled by red // default value
+        	set by new event ml_green // sets ml_tl to green if grd1,grd2 are true
+
+    event IL2BR observes @exclusivity
+        using new variable il_tl:COLOR 
+            enabled by green 
+            disabled by red
+        	set by new event il_green
+
+    exclusion @ml_il ml_tl il_tl // should not be simultaneously green
+end

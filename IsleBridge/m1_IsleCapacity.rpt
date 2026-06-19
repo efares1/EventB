@@ -1,0 +1,8 @@
+counting refinement m1_IsleCapacity refines m0_IsleAccess sees cCapacity
+counters
+	cars
+		incremented by ML2BR
+		decremented by BR2ML
+constraints
+	@capacity cars ∈ 0‥capacity
+end

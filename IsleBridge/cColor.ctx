@@ -1,0 +1,8 @@
+context cColor
+sets
+	COLOR
+constants
+	red green
+axioms
+	@color partition(COLOR, {red},{green})
+end

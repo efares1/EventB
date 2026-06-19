@@ -1,0 +1,17 @@
+observation refinement m4_Sensors
+refines m3_TrafficLights sees cColor cCapacity 
+
+protected event ML2BR observes @ml_tl_ok
+    using new variable ml_out_10
+    set by new event ML2BR_sensor 
+
+protected event IL2BR observes @il_tl_ok
+    using new variable il_out_10
+    set by new event IL2BR_sensor
+
+event BR2ML using new variable ml_in_10
+	set by new event BR2ML_sensor 
+
+event BR2IL using new variable il_in_10
+	set by new event BR2IL_sensor
+end

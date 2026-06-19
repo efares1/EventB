@@ -1,0 +1,14 @@
+counting refinement m2_BridgeToIsle refines m1_IsleCapacity 
+events BR2IL IL2BR
+counters
+   entering incremented by ML2BR decremented by BR2IL
+   islecars incremented by BR2IL decremented by IL2BR
+   exiting incremented by IL2BR decremented by BR2ML
+invariants @glueing cars = entering + islecars + exiting
+constraints
+    @exclusivity entering = 0 or exiting = 0 //single lane bridge 
+    @enter_ctr entering >= 0 //ML2BR precedes BR2IL
+    @stay_ctr islecars >= 0 //BR2IL precedes IL2BR
+    @exit_ctr exiting >= 0 //IL2BR precedes BR2ML
+variants 2*entering + islecars
+end
