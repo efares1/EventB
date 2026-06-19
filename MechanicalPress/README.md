@@ -1,4 +1,4 @@
-# IsleBridge Event-B Case Study
+# Part of Mechanical Press Event-B Case Study
 
 This directory contains an refinement example inspired from the **Island-Bridge (IsleBridge)** Event-B case study used to evaluate the pattern-based refinement approach.
 
