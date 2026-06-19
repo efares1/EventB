@@ -1,0 +1,17 @@
+counting refinement m1Door refines m0Root
+events
+  open_door close_door
+  start_motor stop_motor
+  engage_clutch disengage_clutch
+  start_motor_button_pressed start_motor_button_depressed
+counters
+  boolean door set by close_door reset by open_door
+  boolean motor set by start_motor reset by stop_motor
+  boolean clutch set by engage_clutch reset by disengage_clutch
+  boolean start_motor_button set by start_motor_button_pressed reset by start_motor_button_depressed
+synchronizations
+  @STRONG counter clutch follows door using new variable not_yet_engaged
+constraints
+  //@safe2 clutch=TRUE ⇒ door=TRUE inutile, impliqué par STRONG
+  @safe3 door=TRUE ⇒ motor=TRUE
+end
