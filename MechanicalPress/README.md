@@ -9,7 +9,10 @@ This directory contains an refinement example inspired from the **Island-Bridge 
 | File | Description |
 |--------|-------------|
 | `m0Root.mch` | Initial empty model  |
+| `m1Door.rpt` | Pattern instance declaring button, door, motor and cluch. |
 | `m1Door.mch` | Generated code containing one button, door, motor and cluch. |
+| `m2Split.rpt` | Pattern instance declaring door/motor synchronization and separaing action/reaction. |
+| `m2Split.mch` | Generated code containing door/motor synchronization. |
 
 Each `.mch` file corresponds to a complete Event-B machine generated after applying a pattern instance.
 
