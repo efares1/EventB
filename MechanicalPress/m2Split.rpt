@@ -1,0 +1,8 @@
+splitting refinement m2Split refines m1Door
+  weak precedence @SF1a close_door → start_motor;
+  weak precedence @SF1b stop_motor → open_door;
+  command @SM start_motor_button_pressed → start_motor; // manque prise en compte des précédences dans bool(... => _)
+  weak split event start_motor_button_pressed in start_motor_button_pressed_action, start_motor_button_pressed_reaction using new variable start_motor_button_pressed_done;
+  strong split event open_door in open_door_action, open_door_reaction using new variable door_opening;
+  strong split event start_motor in start_motor_action, start_motor_reaction using new variable motor_starting;
+end
